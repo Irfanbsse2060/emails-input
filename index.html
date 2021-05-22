@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email-Input-Example</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
+    <link rel="stylesheet" href="emails-input/emails-input.css"/>
+    <link rel="stylesheet" href="index.css"/>
+
+</head>
+<body>
+
+<!-- form header -->
+<section class="main">
+    <div class="card">
+        <div class="card__body">
+            <h3 class="card__body__title">Share <b>Project name</b> with others</h3>
+            <div class="card__body__email">
+                <div id="emails-input"></div>
+            </div>
+        </div>
+        <div class="card__footer">
+            <button class="button" id="bt-add-email"> Add Email</button>
+            <button class="button" id="bt-emails-count"> Get emails count</button>
+            <button class="button" id="bt-replace-emails"> Replace emails</button>
+        </div>
+    </div>
+</section>
+
+<!-- form footer, buttons -->
+<script src="emails-input/emails-input.js"></script>
+<script>
+    const emailsInput = new EmailsInput('emails-input', {
+        placeholder: 'add more people...',
+        onAdd: function (email, data) {
+            console.log(email)
+            console.log(data)
+        },
+        onRemove: function (email, data) {
+            console.log(email)
+            console.log(data)
+        }
+    });
+
+    document.getElementById('bt-add-email').addEventListener("click", function () {
+        emailsInput.add(`email_${Math.floor(Math.random() * 100)}@gmail.com`)
+    });
+
+    document.getElementById('bt-emails-count').addEventListener('click', function () {
+        alert(`Total number of valid emails  =  ${emailsInput.getValidEmailsCount()}`)
+    })
+
+    document.getElementById('bt-replace-emails').addEventListener('click', function () {
+        emailsInput.updateAllEmails([
+            'irfan@gmail.com',
+            'khaled@gmail.com'
+        ])
+    })
+</script>
+
+</body>
+</html>

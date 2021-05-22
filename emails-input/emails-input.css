@@ -1,3 +1,4 @@
+/*root element*/
 .email-input-container {
     background: #FFFFFF;
     border: 1px solid #C3C2CF;
@@ -9,44 +10,65 @@
     height: 100%;
     overflow: auto;
 }
+
+/* email list*/
 .email-input-container__list {
     padding: 0;
-    margin:0;
+    margin: 0;
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
+/*email list items  base*/
 .email-input-container__list__item {
-    height: 24px;
-    padding: 0px  10px;
+    min-height: 24px;
+    padding: 0px 10px;
     font-size: 14px;
 }
+
+/*email list items valid variant */
 .email-input-container__list__item--valid {
     background: rgba(102, 153, 255, 0.2);
     border-radius: 16px;
 }
 
-.email-input-container__list__item--invalid{
+/*email list items invalid variant */
+.email-input-container__list__item--invalid {
     background: white;
     border-bottom: 1px dashed #D92929;
 }
 
+/*email cross icon*/
 .email-input-container__list__item__remove {
     padding-left: 8px;
     cursor: pointer;
 }
 
-
+/*email input styling */
 .email-input-container__list__item__input {
     border: none;
 }
 
+/*email input styling for removing default input styling */
 .email-input-container__list__item__input:focus {
-    outline:none;
-    outline-width: 0;
+    outline: none 0;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+}
+
+/* gap property is not available in old safari*/
+@media not all and (min-resolution: .001dpcm) {
+    @supports (-webkit-appearance:none) {
+
+        .email-input-container__list > li {
+            margin: 5px;
+        }
+
+        email-input-container__list__item__input {
+            margin-left: 10px;
+        }
+    }
 }

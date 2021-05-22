@@ -19,6 +19,7 @@ A reusable email input component in js ([Demo](https://irfanbsse2060.github.io/e
 e.g `updateAllEmails(['user@domain.com','user2@domain.com'])`
 
 ## How to use in code.
+- Import font `<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>`
 - Import css file: ` <link rel="stylesheet"  href="emails-input/emails-input.css"/>`
 - Import Js file: `<script src="emails-input/emails-input.js"></script>`
 - Initialize the component by calling the method  `new EmailsInput(elementId, options)`,
@@ -55,4 +56,4 @@ var emailsInput = new EmailsInput('emails-input', {
   We can avoid this by styling using javascript which i believe will affect the code readability that's why for now
   i have created separate css file. We can switch to this approach as well if its necessary, It won't take much time as we already have style defined.
 
-### It is tested on the latest version of  firefox, safari, chrome.
+### It is tested on the latest version of  firefox, safari, chrome, Microsoft Edge (Version 90.0.818.66 )

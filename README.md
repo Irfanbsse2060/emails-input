@@ -57,3 +57,7 @@ var emailsInput = new EmailsInput('emails-input', {
   i have created separate css file. We can switch to this approach as well if its necessary, It won't take much time as we already have style defined.
 
 ### It is tested on the latest version of  firefox, safari, chrome, Microsoft Edge (Version 90.0.818.66 )
+
+
+# Testing
+- For testing please read [TEST.md](https://github.com/Irfanbsse2060/emails-input/blob/main/cypress/TEST.md)

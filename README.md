@@ -19,7 +19,7 @@ A reusable email input component in js ([Demo](https://irfanbsse2060.github.io/e
 e.g `updateAllEmails(['user@domain.com','user2@domain.com'])`
 
 ## How to use in code.
-- Import font `<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>`
+- Import font (optional but better to import) `<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>`
 - Import css file: ` <link rel="stylesheet"  href="emails-input/emails-input.css"/>`
 - Import Js file: `<script src="emails-input/emails-input.js"></script>`
 - Initialize the component by calling the method  `new EmailsInput(elementId, options)`,
@@ -32,8 +32,8 @@ e.g `updateAllEmails(['user@domain.com','user2@domain.com'])`
 
 - onAdd (optional):  Function to be called with new added email and all the emails added whenever
        user add new email
-- onRemove (optional): Function to be called with new added email and all the emails added whenever
-                                 user add remove an emal by clicking on cross icon       
+- onRemove (optional): Function to be called with removed email and all the emails added whenever
+                                 user removes an email by clicking on cross icon       
        
 # Example
 ```
@@ -60,4 +60,4 @@ var emailsInput = new EmailsInput('emails-input', {
 
 
 # Testing
-- For testing please read [TEST.md](https://github.com/Irfanbsse2060/emails-input/blob/main/cypress/TEST.md)
+- For testing please read [TEST.md](https://github.com/Irfanbsse2060/emails-input/blob/main/tests/TEST.md)

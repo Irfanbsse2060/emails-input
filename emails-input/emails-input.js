@@ -157,6 +157,7 @@ EmailsInput.prototype.focusOut = function (event, emailInput) {
 
 // when user clicks on the remove  icon
 EmailsInput.prototype.remove = function (event, emailInput) {
+    event.preventDefault()
     const emailToBeRemoved = event.target.parentElement.children[0].innerText
     emailInput.data = emailInput.data.filter(function (email) {
         return email.value !== emailToBeRemoved

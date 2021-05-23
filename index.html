@@ -11,7 +11,7 @@
 <body>
 
 <!-- form header -->
-<section class="main">
+<form class="main" id="form">
     <div class="card">
         <div class="card__body">
             <h3 class="card__body__title">Share <b>Project name</b> with others</h3>
@@ -19,26 +19,32 @@
                 <div id="emails-input"></div>
             </div>
         </div>
+        <!-- form footer, buttons -->
         <div class="card__footer">
-            <button class="button" id="bt-add-email"> Add Email</button>
-            <button class="button" id="bt-emails-count"> Get emails count</button>
-            <button class="button" id="bt-replace-emails"> Replace emails</button>
+            <button type='button' class="button" id="bt-add-email"> Add Email</button>
+            <button type='button' class="button" id="bt-emails-count"> Get emails count</button>
+            <button type='button' class="button" id="bt-replace-emails"> Replace emails</button>
         </div>
     </div>
-</section>
+</form>
 
-<!-- form footer, buttons -->
+
 <script src="emails-input/emails-input.js"></script>
 <script>
+
+    document.getElementById('form').addEventListener("submit", function (event) {
+        event.preventDefault()
+    });
+
     const emailsInput = new EmailsInput('emails-input', {
         placeholder: 'add more people...',
         onAdd: function (email, data) {
-            console.log(email)
-            console.log(data)
+            console.log(email)  // newly added email
+            console.log(data) // all emails
         },
         onRemove: function (email, data) {
-            console.log(email)
-            console.log(data)
+            console.log(email) //new added email
+            console.log(data) // all emails.
         }
     });
 
